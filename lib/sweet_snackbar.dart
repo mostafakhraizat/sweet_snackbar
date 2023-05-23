@@ -20,6 +20,8 @@ class CustomSnackBar extends StatefulWidget {
   const CustomSnackBar.success({
     Key? key,
     required this.message,
+    required this.borderRadius,
+    required this.boxShadow,
     this.messagePadding = const EdgeInsets.symmetric(horizontal: 24),
     this.icon = const Icon(
       Icons.check_circle,
@@ -34,8 +36,6 @@ class CustomSnackBar extends StatefulWidget {
     this.iconPositionTop = -0,
     this.iconPositionLeft = -0,
     this.backgroundColor = const Color(0xff00E676),
-    this.boxShadow = kDefaultBoxShadow,
-    this.borderRadius = kDefaultBorderRadius,
     this.textScaleFactor = 1.0,
   });
     CustomSnackBar.normal({
