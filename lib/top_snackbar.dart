@@ -163,8 +163,8 @@ class _TopSnackBarState extends State<TopSnackBar>
           child: TapBounceContainer(
             onTap: () {
               if (mounted) {
-                // widget.onTap?.call();
-                // animationController.reverse();
+                widget.onTap?.call();
+                animationController.reverse();
               }
             },
             child: widget.child,

@@ -16,12 +16,16 @@ class CustomSnackBar extends StatefulWidget {
   final double iconPositionLeft;
   final EdgeInsetsGeometry messagePadding;
   final double textScaleFactor;
+  final double? closeIconLeftPadding;
+  final Widget? closeIcon;
 
   const CustomSnackBar.success({
     Key? key,
     required this.message,
     required this.borderRadius,
     required this.boxShadow,
+    this.closeIcon,
+    this.closeIconLeftPadding,
     this.messagePadding = const EdgeInsets.symmetric(horizontal: 24),
     this.icon = const Icon(
       Icons.check_circle,
@@ -41,6 +45,8 @@ class CustomSnackBar extends StatefulWidget {
     CustomSnackBar.normal({
     Key? key,
     required this.message,
+    this.closeIcon,
+    this.closeIconLeftPadding,
     this.messagePadding = const EdgeInsets.symmetric(horizontal: 0),
     this.icon = const Icon(
       Icons.info_outline,
@@ -63,6 +69,8 @@ class CustomSnackBar extends StatefulWidget {
   const CustomSnackBar.info({
     Key? key,
     required this.message,
+    this.closeIcon,
+    this.closeIconLeftPadding,
     this.messagePadding = const EdgeInsets.symmetric(horizontal: 24),
     this.icon = const Icon(
       Icons.info_outline,
@@ -85,6 +93,9 @@ class CustomSnackBar extends StatefulWidget {
   const CustomSnackBar.error({
     Key? key,
     required this.message,
+    this.closeIcon,
+    this.closeIconLeftPadding,
+
     this.messagePadding = const EdgeInsets.symmetric(horizontal: 24),
     this.icon = const Icon(
       Icons.warning,
@@ -150,6 +161,11 @@ class _CustomSnackBarState extends State<CustomSnackBar> {
               ),
             ),
           ),
+
+          Positioned(
+              right: widget.closeIconLeftPadding??22,
+              child: widget.closeIcon??Icon(Icons.close,))
+
         ],
       ),
     );
