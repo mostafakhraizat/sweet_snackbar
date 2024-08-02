@@ -42,7 +42,7 @@ class CustomSnackBar extends StatefulWidget {
     this.backgroundColor = const Color(0xff00E676),
     this.textScaleFactor = 1.0,
   });
-    CustomSnackBar.normal({
+  CustomSnackBar.normal({
     Key? key,
     required this.message,
     this.closeIcon,
@@ -95,7 +95,6 @@ class CustomSnackBar extends StatefulWidget {
     required this.message,
     this.closeIcon,
     this.closeIconLeftPadding,
-
     this.messagePadding = const EdgeInsets.symmetric(horizontal: 24),
     this.icon = const Icon(
       Icons.warning,
@@ -151,7 +150,7 @@ class _CustomSnackBarState extends State<CustomSnackBar> {
               padding: widget.messagePadding,
               child: Text(
                 widget.message,
-                style: theme.textTheme.bodyText2?.merge(
+                style: theme.textTheme.bodyMedium?.merge(
                   widget.textStyle,
                 ),
                 textAlign: TextAlign.center,
@@ -161,11 +160,12 @@ class _CustomSnackBarState extends State<CustomSnackBar> {
               ),
             ),
           ),
-
           Positioned(
-              right: widget.closeIconLeftPadding??22,
-              child: widget.closeIcon??Icon(Icons.close,))
-
+              right: widget.closeIconLeftPadding ?? 22,
+              child: widget.closeIcon ??
+                  Icon(
+                    Icons.close,
+                  ))
         ],
       ),
     );
